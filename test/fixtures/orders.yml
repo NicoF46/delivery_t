@@ -3,13 +3,13 @@
 one:
   product: one
   customer_name: MyString
-  adress: MyString
+  address: MyString
   zip_code: MyString
   shipping_method: MyString
 
 two:
   product: two
   customer_name: MyString
-  adress: MyString
+  address: MyString
   zip_code: MyString
   shipping_method: MyString
