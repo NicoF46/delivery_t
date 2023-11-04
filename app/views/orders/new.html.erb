@@ -1,0 +1,64 @@
+<!-- app/views/orders/new.html.erb -->
+
+<h1 class="mb-4">Create Order</h1>
+<% if flash[:notice].present? %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% if flash.now[:alert].present? %>
+  <div class="alert alert-danger">
+    <%= flash.now[:alert] %>
+  </div>
+<% end %>
+<div class="form_order">
+
+<%= form_with(model: @order, url: orders_path, method: :post, class: 'mb-4', id: 'order-form') do |form| %>
+  <div class="row mb-3">
+    <div class="col-3">
+      <%= form.label :product_id, class: 'form-label' %>
+    </div>
+    <div class="col-9">
+      <%= form.collection_select :product_id, Product.all, :id, :name, { prompt: 'Select a Product' }, class: 'form-select' %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-3">
+      <%= form.label :customer_name, class: 'form-label' %>
+    </div>
+    <div class="col-9">
+      <%= form.text_field :customer_name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-3">
+      <%= form.label :address, class: 'form-label' %>
+    </div>
+    <div class="col-9">
+      <%= form.text_area :address, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-3">
+      <%= form.label :zip_code, class: 'form-label' %>
+    </div>
+    <div class="col-9">
+      <%= form.text_field :zip_code, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-3">
+      <%= form.label :shipping_method, class: 'form-label' %>
+    </div>
+    <div class="col-9">
+      <%= form.text_field :shipping_method, class: 'form-control' %>
+    </div>
+  </div>
+
+  <%= form.submit "Create Order", class: 'btn btn-primary' %>
+<% end %>

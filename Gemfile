@@ -18,6 +18,7 @@ gem 'jbuilder'
 gem 'turbolinks'
 
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootstrap', '~> 5.1.3'
 gem 'http'
 gem 'parallel'
 
@@ -45,5 +46,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rails-controller-testing'
   gem 'shoulda-matchers'
 end
