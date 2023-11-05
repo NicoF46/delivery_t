@@ -14,4 +14,6 @@ class Order < ApplicationRecord
   validates :address, presence: true
   validates :zip_code, presence: true
   validates :shipping_method, presence: true
+  scope :recent, -> { order(created_at: :desc).limit(5) }
+
 end

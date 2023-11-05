@@ -1,0 +1,12 @@
+<% if orders.any? %>
+  <% orders.each do |order| %>
+    <div>
+      <strong>Order ID:</strong> <%= order.id %> - 
+      <strong>Customer Name:</strong> <%= order.customer_name %> -
+      <strong>Status:</strong> <%= order.status %>
+    </div>
+    <hr>
+  <% end %>
+<% else %>
+  <p>No orders available.</p>
+<% end %>

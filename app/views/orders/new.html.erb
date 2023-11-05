@@ -62,3 +62,9 @@
 
   <%= form.submit "Create Order", class: 'btn btn-primary' %>
 <% end %>
+<% if user_signed_in? %>
+  <%= button_to "Exit", destroy_user_session_path, method: :delete, class: "btn btn-danger", form_class: "d-inline" %>
+<% end %>
+
+
+
