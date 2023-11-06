@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe OrdersHelper, type: :helper do
   describe OrdersHelper::OrderUpdater do
     let(:order_updater) { OrdersHelper::OrderUpdater.new(order) }
-    
+
     describe '#update_shipping_status' do
       context 'when order status is processing' do
         let(:order) { create(:order, status: 'processing') }
@@ -22,7 +22,7 @@ RSpec.describe OrdersHelper, type: :helper do
         let(:order) { create(:order, status: 'awaiting_pickup') }
 
         before do
-          allow(Fedex::Shipment).to receive(:find).and_return(double(status: 'delivered'))          
+          allow(Fedex::Shipment).to receive(:find).and_return(double(status: 'delivered'))
         end
 
         it 'updates shipping status with an existing shipment' do

@@ -8,7 +8,9 @@ class UpdateShippingStatusJob < ActiveJob::Base
     rescue StandardError => e
       Rails.logger.error("Error updating shipping status for order #{order.id}: #{e.message}")
     end
+    return if orders_updates.empty?
 
     BulkHelper::OrderUpdater.new(orders_updates).perform
+    OrderStatusUpdateMailer.notify_order_status_update(orders_updates).deliver_now
   end
 end
