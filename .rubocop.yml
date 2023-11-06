@@ -1,0 +1,56 @@
+AllCops:
+  Exclude:
+    - spec/support/spec_helper.rb
+    - spec/rails_helper.rb
+    - db/**/*
+    - docs/**/*
+    - config/**/*
+    - bin/**/*
+    - lib/fedex.rb
+
+Documentation:
+  Enabled: false
+
+LineLength:
+  Max: 99
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+    - app/admin/*
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ClassVars:
+  Enabled: false
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
+Bundler/DuplicatedGem:
+  Exclude:
+    - 'Gemfile'
+
+# Offense count: 4
+Metrics/AbcSize:
+  Max: 65
+
+# Offense count: 1
+Metrics/CyclomaticComplexity:
+  Max: 29
+
+# Offense count: 8
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+# URISchemes: http, https
+Metrics/LineLength:
+  Max: 405
+
+# Offense count: 6
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 36
+
+# Offense count: 1
+Metrics/PerceivedComplexity:
+  Max: 31
