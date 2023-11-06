@@ -8,7 +8,7 @@ ActiveAdmin.register Order do
       f.input :address
       f.input :zip_code
       f.input :shipping_method
-      f.input :status, as: :select, collection: Order.statuses.keys
+      f.input :status, as: :select, collection: Order.statuses.keys, include_blank: false
     end
     f.actions
   end

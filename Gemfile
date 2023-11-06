@@ -25,6 +25,11 @@ gem 'parallel'
 gem 'devise'
 gem 'activeadmin'
 
+gem 'sidekiq'
+gem 'sidekiq-failures'
+gem 'sidekiq_mailer'
+gem 'sidekiq-scheduler'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -43,6 +48,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'yard'
+  gem 'simplecov'
 end
 
 group :test do

@@ -57,7 +57,7 @@ module Fedex
     # @raise [ShipmentNotFound] if the shipment can't be found
     #
     def self.find(fedex_id)
-      shipment = @shipments[id]
+      shipment = @shipments[fedex_id]
 
       raise ShipmentNotFound, "Shipment not found: #{id}" if shipment.blank?
 
