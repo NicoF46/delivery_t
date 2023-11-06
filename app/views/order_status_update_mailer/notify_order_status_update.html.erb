@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h1>Order Status Update</h1>
+  <p>Dear Manager,</p>
+  <p>Here is the list of updates on the deliveries:</p>
+  <% @orders.each do |key, values|%>
+    <p>Order ID: <%= key.to_s %> Changes: <%= values.to_s %></p>
+  <% end %>
+  <p>Thank you for choosing our service!</p>
+</body>
+</html>
