@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'dotenv-rails'
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 gem 'pg', '1.1.3'
 gem 'puma', '~> 3.11'
@@ -22,13 +23,13 @@ gem 'bootstrap', '~> 5.1.3'
 gem 'http'
 gem 'parallel'
 
-gem 'devise'
 gem 'activeadmin'
+gem 'devise'
 
 gem 'sidekiq'
 gem 'sidekiq-failures'
-gem 'sidekiq_mailer'
 gem 'sidekiq-scheduler'
+gem 'sidekiq_mailer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,10 +46,10 @@ group :development do
   gem 'rubocop-rspec', '1.10.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'simplecov'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'yard'
-  gem 'simplecov'
 end
 
 group :test do

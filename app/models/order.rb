@@ -16,5 +16,4 @@ class Order < ApplicationRecord
   validates :shipping_method, presence: true
   validates :status, presence: true
   scope :recent, -> { order(created_at: :desc).limit(5) }
-
 end

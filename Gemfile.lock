@@ -99,6 +99,10 @@ GEM
     docile (1.4.0)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.8.0)
     et-orbi (1.2.7)
       tzinfo
@@ -363,6 +367,7 @@ DEPENDENCIES
   capybara
   database_cleaner
   devise
+  dotenv-rails
   factory_bot_rails
   faker
   http

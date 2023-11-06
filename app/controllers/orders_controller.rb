@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create show]
+
   def new
     @order = Order.new
   end

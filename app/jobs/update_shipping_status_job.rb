@@ -12,7 +12,7 @@ class UpdateShippingStatusJob < ActiveJob::Base
 
   def update_shipping_status(order)
     if order.status == 'processing'
-      shipment = Fedex::Shipment.create 
+      shipment = Fedex::Shipment.create
       order.update!(status: shipment.status, external_tracking_id: shipment.id.to_s)
     else
       shipment = Fedex::Shipment.find(order&.external_tracking_id&.to_i)

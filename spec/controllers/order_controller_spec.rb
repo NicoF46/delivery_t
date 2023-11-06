@@ -3,6 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe OrdersController, type: :controller do
+  let(:user) { create(:user) } # Asume que tienes un modelo de usuario llamado User
+
+  before do
+    sign_in user
+  end
+
   describe 'GET #new' do
     it 'renders the new template' do
       get :new

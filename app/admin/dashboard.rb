@@ -7,11 +7,9 @@ ActiveAdmin.register_page 'Dashboard' do
     columns do
       column do
         panel 'Recent Orders' do
-          # Aquí incluye el panel de órdenes
           render partial: 'admin/orders/index', locals: { orders: Order.recent }
         end
       end
     end
   end
 end
-
